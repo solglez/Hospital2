@@ -9,7 +9,7 @@ import java.util.Date;
 public class Main {
 
     public static void main(String[] args) {
-        Date ini_turno = new Date(2021,11,21,9,30);
+        Date ini_turno = new Date(2021,11,21,10,50);
         Date fin_turno = new Date(2021,11,21,17,30);
         PlantaJ planta1 = new PlantaJ(1);
         TurnoJ t1 = new TurnoJ(ini_turno,fin_turno,planta1);
