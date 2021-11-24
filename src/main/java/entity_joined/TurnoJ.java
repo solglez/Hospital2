@@ -1,8 +1,10 @@
 package entity_joined;
 
+import jdk.vm.ci.meta.Local;
+
 import javax.persistence.*;
 import java.util.ArrayList;
-import java.util.Date;
+import java.time.LocalDate;
 import java.util.List;
 
 @Entity
@@ -12,8 +14,8 @@ public class TurnoJ {
     @GeneratedValue(strategy = GenerationType.SEQUENCE)
     private int idTurno;
     @Column(name = "hora_ini")
-    private Date horaInicio;
-    private Date horaFin;
+    private LocalDate fchInicio;
+    private LocalDate fchFin;
 
     @ManyToOne(cascade = CascadeType.ALL)
     @JoinColumn(name = "planta")
@@ -28,16 +30,16 @@ public class TurnoJ {
     public TurnoJ() {
     }
 
-    public TurnoJ(Date horaInicio, Date horaFin) {
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
+    public TurnoJ(LocalDate fchInicio, LocalDate fchFin) {
+        this.fchInicio = fchInicio;
+        this.fchFin = fchFin;
         lceladores=new ArrayList<CeladorJ>();
         llimpiadores=new ArrayList<LimpiadorJ>();
     }
 
-    public TurnoJ(Date horaInicio, Date horaFin, PlantaJ planta) {
-        this.horaInicio = horaInicio;
-        this.horaFin = horaFin;
+    public TurnoJ(LocalDate fchInicio, LocalDate fchFin, PlantaJ planta) {
+        this.fchInicio = fchInicio;
+        this.fchFin = fchFin;
         this.planta = planta;
         lceladores=new ArrayList<CeladorJ>();
         llimpiadores=new ArrayList<LimpiadorJ>();
@@ -51,20 +53,20 @@ public class TurnoJ {
         this.idTurno = idTurno;
     }
 
-    public Date getHoraInicio() {
-        return horaInicio;
+    public LocalDate getfchInicio() {
+        return fchInicio;
     }
 
-    public void setHoraInicio(Date horaInicio) {
-        this.horaInicio = horaInicio;
+    public void setfchInicio(LocalDate fchInicio) {
+        this.fchInicio = fchInicio;
     }
 
-    public Date getHoraFin() {
-        return horaFin;
+    public LocalDate getfchFin() {
+        return fchFin;
     }
 
-    public void setHoraFin(Date horaFin) {
-        this.horaFin = horaFin;
+    public void setfchFin(LocalDate fchFin) {
+        this.fchFin = fchFin;
     }
 
     public PlantaJ getPlanta() {

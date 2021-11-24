@@ -4,13 +4,14 @@ import entity_joined.*;
 import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
-import java.util.Date;
+import java.time.LocalDate;
+
 
 public class Main {
 
     public static void main(String[] args) {
-        Date ini_turno = new Date(2021,11,21,10,30);
-        Date fin_turno = new Date(2021,11,21,17,30);
+        LocalDate ini_turno = LocalDate.of(2021,11,21);
+        LocalDate fin_turno = LocalDate.of(2021, 11, 22);
         PlantaJ planta1 = new PlantaJ(1);
         TurnoJ t1 = new TurnoJ(ini_turno,fin_turno,planta1);
         DireccionJ dir1 = (new DireccionJ("Avda. Barcelona",82));
